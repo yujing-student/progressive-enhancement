@@ -1,41 +1,52 @@
 <!doctype html>
 <html lang="nl">
-	<head>
-		<meta charset="utf-8">
-		<title>File upload met preview / Progressive Enhancement / FDND</title>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-		<link href="assets/styles.css" rel="stylesheet">
-		<style>
-			/* Schrijf hier gewoon je CSS voor dit component */
+<head>
+	<meta charset="utf-8">
+	<title>File upload met preview / Progressive Enhancement / FDND</title>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+	<link href="assets/styles.css" rel="stylesheet">
+	<style>
+		/* Schrijf hier gewoon je CSS voor dit component */
 
-			/* Hint: Denk niet te ingewikkeld */
-		</style>
-		<script type="module">
-			/* Schrijf hier eventueel je client-side JavaScript */
-			
-			/* Hint: Met een paar regels kom je al een heel eind */
+		/* Hint: Denk niet te ingewikkeld */
+		section{
+			background-color: #66E5BF;
+			width: 44em;
+			height: 14em;
+		}
 
-			/* Hint: Via JS kun je Custom Properties in CSS aanpassen */
-		</script>
-	</head>
-	<body>
-		<h1>File upload met preview</h1>
+	</style>
+	<script type="module">
+		/* Schrijf hier eventueel je client-side JavaScript */
 
-		<!-- Voor het uploaden van een bestand heb je altijd een formulier nodig.
-			 Dus die krijg je alvast. Maak je over de server niet druk; het gaat om de UI. -->
-		<form method="post">
+		/* Hint: Met een paar regels kom je al een heel eind */
 
-			<!-- Hint: Denk niet te ingewikkeld -->
+		/* Hint: Via JS kun je Custom Properties in CSS aanpassen */
+	</script>
+</head>
+<body>
+<h1>File upload met preview</h1>
 
-			<button type="submit" class="fdnd-button">Uploaden</button>
+<!-- Voor het uploaden van een bestand heb je altijd een formulier nodig.
+     Dus die krijg je alvast. Maak je over de server niet druk; het gaat om de UI. -->
+<section>
 
-		</form>
 
-		<details open>
-			<summary>Demo video</summary>
-			<video src="assets/file.mp4" width="1496" height="496" controls muted autoplay loop>
-				<a href="assets/file.mp4">assets/file.mp4</a>
-			</video>
-		</details>
-	</body>
+	<!--			<h2>kies je afbeelding</h2>-->
+	<form method="post">
+
+		<!-- Hint: Denk niet te ingewikkeld -->
+		<!--https://www.w3schools.com/howto/howto_html_file_upload_button.asp-->
+		<input type="file" id="myFile" name="filename">
+		<button type="submit" class="fdnd-button">Uploaden</button>
+
+	</form>
+</section>
+<details open>
+	<summary>Demo video</summary>
+	<video src="assets/file.mp4" width="1496" height="496" controls muted autoplay loop>
+		<a href="assets/file.mp4">assets/file.mp4</a>
+	</video>
+</details>
+</body>
 </html>

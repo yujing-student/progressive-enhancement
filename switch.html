@@ -1,28 +1,94 @@
 <!doctype html>
 <html lang="nl">
-	<head>
-		<meta charset="utf-8">
-		<title>Switch control / Progressive Enhancement / FDND</title>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-		<link href="assets/styles.css" rel="stylesheet">
-		<style>
-			/* Schrijf hier gewoon je CSS voor dit component */
+<head>
+	<meta charset="utf-8">
+	<title>Switch control / Progressive Enhancement / FDND</title>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+	<link href="assets/styles.css" rel="stylesheet">
+	<style>
+		/* Schrijf hier gewoon je CSS voor dit component */
 
-			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
+		/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
 
-			/* Hint: Hoe ver ga je qua styling? Vraag jezelf dit altijd af */
-		</style>
-	</head>
-	<body>
-		<h1>Switch control</h1>
-		
-		<!-- Hint: Op het WebKit blog stond hierover vorige maand een goed artikel -->
+		/* Hint: Hoe ver ga je qua styling? Vraag jezelf dit altijd af */
 
-		<details open>
-			<summary>Demo video</summary>
-			<video src="assets/switch.mp4" width="119" height="67" controls muted autoplay loop>
-				<a href="assets/switch.mp4">assets/switch.mp4</a>
-			</video>
-		</details>
-	</body>
+		.switch {
+			position: relative;
+			display: inline-block;
+			width: 60px;
+			height: 34px;
+		}
+
+		.switch input {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+
+		.slider {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #ccc;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+
+		.slider:before {
+			position: absolute;
+			content: "";
+			height: 26px;
+			width: 26px;
+			left: 4px;
+			bottom: 4px;
+			background-color: white;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+
+		input:checked + .slider {
+			background-color: #2196F3;
+		}
+
+		input:focus + .slider {
+			box-shadow: 0 0 1px #2196F3;
+		}
+
+		input:checked + .slider:before {
+			-webkit-transform: translateX(26px);
+			-ms-transform: translateX(26px);
+			transform: translateX(26px);
+		}
+
+		/* Rounded sliders */
+		.slider.round {
+			border-radius: 34px;
+		}
+
+		.slider.round:before {
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+<h1>Switch control</h1>
+
+<h2>Toggle Switch</h2>
+
+<label class="switch">
+	<input type="checkbox">
+	<span class="slider round"></span>
+</label>
+<!-- Hint: Op het WebKit blog stond hierover vorige maand een goed artikel -->
+
+<details open>
+	<summary>Demo video</summary>
+	<video src="assets/switch.mp4" width="119" height="67" controls muted autoplay loop>
+		<a href="assets/switch.mp4">assets/switch.mp4</a>
+	</video>
+</details>
+</body>
 </html>
