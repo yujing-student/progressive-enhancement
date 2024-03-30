@@ -11,23 +11,100 @@
 		/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
 
 		/* Hint: Denk aan de states van het component; deze kan open en dicht zijn */
+
+		details {
+			padding: 1em;
+			border-radius: 0.8em;
+			width: fit-content;
+			cursor: pointer;
+			max-width: 60em;
+		}
+
+
+		details[open] p {
+
+			border-radius: 0em 1em 1em 1em;
+			margin: 0;
+			padding: 1em;
+		}
+
+
+		summary {
+			border-radius: 1em 1em 1em 1em;
+			border: solid #050542;
+			padding: 1em;
+		}
+
+		/*alle kinderen van de nth child hbebben deze kleur dus ook de summary en de p*/
+		details[open]:is(:nth-of-type(1)) > * {
+			background: var(--purple);
+		}
+		details[open]:is(:nth-of-type(2)) > * {
+			background: var(--green);
+		}
+
+		details[open]:is(:nth-of-type(3)) > * {
+			background: var(--yellow);
+		}
+
+		details[open] summary {
+			border-radius: 1em 1em 0em 0em;
+			width: 20em;
+			border: none;
+		}
+
+		summary::marker {
+			content: "+";
+			/*font-size: 1.5em;*/
+		}
+
+		details[open] summary::marker {
+			content: "-";
+			transform: rotate(45deg);
+			/*font-size: 1.5em;*/
+		}
+
 	</style>
 </head>
 <body>
 <h1>Veelgestelde vragen</h1>
-<!--https://codepen.io/ddZ6ii/pen/GRLZvoy  voorbeeld-->
+<details>
+	<summary>Wat is frontend development?</summary>
+	<p>
+		Een frontend developer ontwerpt en bouwt websites in HTML, CSS en JavaScript. Deze frontend talen leer je bij
+		ons, je hebt dus geen voorkennis nodig.
+	</p>
+</details>
 
-<!-- Content (waar nog wat HTML omheen moet 😄):
-Wat is frontend development?
-Een frontend developer ontwerpt en bouwt websites in HTML, CSS en JavaScript. Deze frontend talen leer je bij ons, je hebt dus geen voorkennis nodig.
+<details>
+	<summary>Moet ik al kunnen coderen?</summary>
+	<p>
+		Nee, je hebt helemaal geen voorkennis nodig om te beginnen aan deze opleiding, we kunnen je alles leren! Als je
+		wel al voorkennis hebt, is dat alleen maar goed, dan kunnen we je helpen je skills te verbeteren en te verdiepen
+		in
+		de stof.
+	</p>
+</details>
 
-Moet ik al kunnen coderen?
-Nee, je hebt helemaal geen voorkennis nodig om te beginnen aan deze opleiding, we kunnen je alles leren! Als je wel al voorkennis hebt, is dat alleen maar goed, dan kunnen we je helpen je skills te verbeteren en te verdiepen in de stof.
+<details>
+	<summary>Wat is een Associate Degree?</summary>
+	<p>
+		Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5. Een Ad slaat een brug tussen het
+		mbo-4
+		(niveau 4) en een hbo-bachelor (niveau 6). Met een Associate degree kies je voor een praktijkgerichte
+		hbo-opleiding;
+		je wordt opgeleid voor een beroep dat aansluit bij de praktijk. In dit geval word je opgeleid tot ‘frontend
+		designer/developer' of kortweg ‘frontender’. Frontenders ontwerpen en maken interactieve, toegankelijke
+		toepassingen
+		voor het web. Frontenders werken binnen het gebied van software development, interactieontwerp en digitaal
+		visueel
+		ontwerp.
+		Na afronding van deze tweejarige hbo-opleiding, krijg je een wettelijk erkend hbo-diploma met de graad Associate
+		degree. Met dit Ad-diploma kun je direct aan de slag in het werkveld of doorstromen naar de bacheloropleiding
+		Communication and Multimedia Design (CMD).
+	</p>
+</details>
 
-Wat is een Associate Degree?
-Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5. Een Ad slaat een brug tussen het mbo-4 (niveau 4) en een hbo-bachelor (niveau 6). Met een Associate degree kies je voor een praktijkgerichte hbo-opleiding; je wordt opgeleid voor een beroep dat aansluit bij de praktijk. In dit geval word je opgeleid tot ‘frontend designer/developer' of kortweg ‘frontender’. Frontenders ontwerpen en maken interactieve, toegankelijke toepassingen voor het web. Frontenders werken binnen het gebied van software development, interactieontwerp en digitaal visueel ontwerp.
-Na afronding van deze tweejarige hbo-opleiding, krijg je een wettelijk erkend hbo-diploma met de graad Associate degree. Met dit Ad-diploma kun je direct aan de slag in het werkveld of doorstromen naar de bacheloropleiding Communication and Multimedia Design (CMD).
--->
 
 
 <!-- Hint: Dit stukje HTML geeft het misschien al weg :) -->

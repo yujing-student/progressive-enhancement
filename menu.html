@@ -1,74 +1,207 @@
-<!doctype html>
 <html lang="nl">
-	<head>
-		<meta charset="utf-8">
-		<title>Mobiel menu / Progressive Enhancement / FDND</title>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-		<link href="assets/styles.css" rel="stylesheet">
-		<style>
-			/* Schrijf hier gewoon je CSS voor dit component */
+<head>
+	<meta charset="utf-8">
+	<title>Mobiel menu / Progressive Enhancement / FDND</title>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		  rel="stylesheet">
+	<link href="assets/styles.css" rel="stylesheet">
+	<style>
+		/* Schrijf hier gewoon je CSS voor dit component */
 
-			/* Hint: kijk eens naar :target */
-		</style>
-		<script type="module">
-			/* Schrijf hier eventueel je client-side JavaScript */
+		nav {
+			background-color: #66E5BF;
+			transition: 0.5s ease-out;
+			position: fixed;
+			inset: 0;
+			transform: translateX(-100%);
+			z-index: 5;
+		}
 
-			/* Hint: dit component kan volledig met CSS, maar met JS kun je 'm helemaal afmaken */
-		</script>
-	</head>
-	<body>
-		<main>
-			<h1>Mobiel menu</h1>
-			
-			<!-- Hint: Wat heb je nodig, als je op een klein scherm naar het menu wilt? -->
+		nav:target {
+			transform: translateX(0);
+			width: 50vh;
+		}
 
-			<details open>
-				<summary>Demo video</summary>
-				<video src="assets/menu.mp4" width="773" height="863" controls muted autoplay loop>
-					<a href="assets/menu.mp4">assets/menu.mp4</a>
-				</video>
-			</details>
+		button {
+			background-color: #050542;
+			color: #66E5BF;
+			border-radius: 1em;
+			padding: 1em;
+		}
+		.menu_link{
+			color: #66E5BF;
+			padding: 1em;
+		}
 
-			<!-- Deze tekst kun je gebruiken, zodat de pagina wat langer wordt
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum eget elit eu tincidunt. Donec gravida nulla at justo sollicitudin, hendrerit faucibus diam tincidunt. Pellentesque porta neque quis nunc laoreet congue. Sed porttitor nec tellus nec semper. Cras pharetra dictum risus ut sagittis. Aliquam in iaculis arcu. Nulla sit amet diam sit amet mauris placerat laoreet eu vel turpis. Vivamus ac massa ut diam gravida elementum ut nec nulla. Integer vel felis massa. Quisque facilisis enim ornare ultricies mattis. Fusce porta rhoncus ex. Nunc viverra orci at leo fermentum convallis. Morbi sodales, lectus congue aliquam maximus, metus ipsum placerat turpis, vitae venenatis metus erat vel eros. Vestibulum lobortis accumsan elit nec maximus. Vivamus mollis ullamcorper felis, id aliquet tellus volutpat at.</p>
-			<p>In ante sem, faucibus sit amet nisl ut, efficitur mattis augue. Aenean fringilla lorem id metus ultrices bibendum. Quisque eleifend enim purus, eu bibendum mauris blandit nec. Donec vitae purus sed eros ullamcorper vehicula sit amet eu massa. Vestibulum eget mi vel tellus pharetra convallis quis quis nunc. Maecenas bibendum neque sit amet neque ultrices sollicitudin. Donec viverra arcu nec urna accumsan pharetra. Donec pharetra lacinia elementum.</p>
-			<p>Aliquam auctor diam ut ipsum mattis semper. Praesent auctor quam ut libero aliquet, at gravida nunc aliquam. Duis mollis faucibus nisi at fringilla. Vestibulum at vulputate tortor, eget consequat libero. Praesent non ante libero. Praesent imperdiet neque at lacus mattis, at tincidunt odio ullamcorper. In massa metus, iaculis id vulputate vel, aliquam eu sem. Nulla varius lorem ut justo consectetur consectetur. Nulla viverra, metus in dapibus facilisis, magna sapien lobortis urna, vel mattis sapien velit at nisi. Nullam semper est lorem, id lobortis est blandit gravida. Nulla purus orci, aliquet ac purus at, eleifend ultricies dolor. Vivamus lobortis lectus quis augue molestie congue. Morbi vel libero ac ex sagittis euismod vitae eu dolor. Nunc sed libero enim. Duis at lacus et est fermentum ullamcorper et non eros. Ut semper auctor commodo.</p>
-			<p>Phasellus facilisis, lorem a venenatis ultrices, turpis turpis maximus est, quis lacinia risus erat quis mi. In ornare consequat malesuada. In hac habitasse platea dictumst. Maecenas egestas diam quis fringilla laoreet. Ut at tortor blandit, ultricies nisi et, pretium nisi. Praesent ac est vitae leo gravida sodales quis quis libero. Nullam nec ligula ultricies, euismod ipsum sed, iaculis urna. Sed vel eros non ex dapibus consequat sed sed diam. Fusce sem libero, fermentum vel sapien ac, dictum fringilla enim.</p>
-			<p>Duis sem ligula, cursus a arcu id, rutrum iaculis mauris. Mauris sagittis eros in elit egestas, et egestas risus lacinia. Nullam vel sapien finibus, vehicula nisi ut, hendrerit turpis. Suspendisse volutpat tortor dolor, non varius purus efficitur eget. Nam mollis sem ac ligula sodales, non commodo justo vulputate. Donec elementum viverra orci at laoreet. Proin lobortis quis neque pretium venenatis. Quisque non rhoncus diam, vitae sollicitudin quam. Sed felis nisl, ultricies sed turpis ac, faucibus imperdiet mi.</p>
-			<p>Nulla sit amet mattis enim. Aenean mollis dapibus gravida. Nam odio metus, luctus et laoreet ac, bibendum eget eros. Ut rutrum dui ut elementum consectetur. Nam imperdiet mollis mattis. Pellentesque et eros magna. Suspendisse bibendum varius mattis. Aliquam placerat quam purus, iaculis ornare augue consequat ac. Vestibulum iaculis ligula in iaculis luctus.</p>
-			<p>Vestibulum varius, nisl ac semper tincidunt, metus leo volutpat nibh, in bibendum purus lorem at mi. Quisque id tincidunt massa, sed mattis tellus. In dignissim fermentum ultricies. Phasellus ornare justo eget arcu rutrum, in elementum lacus dictum. Donec porta, odio id feugiat varius, turpis leo tristique nibh, sed malesuada quam ipsum vitae nibh. Ut tempor rhoncus auctor. Cras sit amet lectus pretium, dignissim est eu, aliquam orci.</p>
-			<p>Morbi sodales est sit amet arcu posuere molestie. Curabitur molestie felis eget orci hendrerit, id rhoncus metus venenatis. Aenean blandit, leo a bibendum porttitor, quam massa aliquam sem, id fermentum nisl libero eu arcu. Curabitur ultrices sagittis mauris, nec imperdiet augue eleifend vel. Proin non dolor ipsum. Nam bibendum erat eu volutpat luctus. Aenean dictum rhoncus erat vel gravida. Pellentesque blandit gravida eros laoreet aliquam. Curabitur tristique ipsum tellus, vitae consectetur ipsum euismod at. Vestibulum tincidunt mauris tellus, quis iaculis nisi elementum vel. Quisque vel libero placerat, pellentesque dolor id, iaculis enim. Aliquam odio sem, lacinia eu dolor vehicula, vulputate accumsan ante. Duis posuere ex sed elit vestibulum faucibus.</p>
-			<p>Sed vitae felis a lorem dictum dictum. Maecenas placerat dolor sed lobortis euismod. Aliquam rutrum tincidunt ex eu consectetur. Quisque et neque quam. Praesent augue nulla, venenatis ac accumsan at, sagittis et lectus. Donec maximus velit sit amet euismod auctor. Ut mattis ipsum nec massa tristique, vitae finibus arcu egestas. Pellentesque ut leo pulvinar, imperdiet ipsum ac, aliquam ligula. Sed ultricies nunc non arcu tempus laoreet.</p>
-			<p>Ut placerat leo quis mi placerat scelerisque. Phasellus vehicula sollicitudin orci sed sollicitudin. In hac habitasse platea dictumst. Duis auctor enim id dolor cursus, egestas venenatis quam accumsan. Integer faucibus lorem id commodo vulputate. Nulla non nulla ut nisl tincidunt finibus et in libero. In aliquet ornare diam ut pharetra.</p>
-			<p>Ut auctor iaculis libero sagittis commodo. Integer non justo eget lacus molestie dictum. Curabitur luctus elementum felis, quis posuere velit tempor ut. Donec lacinia leo non arcu eleifend, non posuere sapien rutrum. Vivamus accumsan ex ante, quis dictum nunc lobortis at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec quam sit amet sem porttitor tincidunt. Nam ut fermentum ex. Quisque aliquet molestie enim, ut egestas arcu fringilla et. Donec dui nulla, fringilla eu urna ut, aliquet eleifend leo. Integer quis mi laoreet, sollicitudin nibh quis, hendrerit augue.</p>
-			<p>Aenean neque sem, scelerisque interdum sem ut, pulvinar aliquam est. Aenean gravida augue dui, nec egestas erat euismod ut. Curabitur et tortor mi. Ut sed dictum nibh, at ultrices purus. Maecenas in dolor vitae erat tincidunt tempor sed vel arcu. Aenean ullamcorper vitae libero mattis sollicitudin. In ultrices condimentum ante ac congue. Nullam pellentesque dolor in ante placerat, sed dignissim ligula congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce in semper lacus, eget venenatis tellus.</p>
-			<p>Fusce congue elit eget sapien hendrerit, sollicitudin fermentum nisi tempor. Cras semper mi id lacus pharetra tincidunt. Aliquam scelerisque facilisis tempus. Quisque sed dui nec lectus pulvinar porta. Cras eget consectetur diam. Pellentesque vel congue neque. Nam arcu mauris, pretium vitae enim et, ornare finibus purus. Nam maximus libero feugiat, faucibus massa vitae, ultricies est. Aenean mattis viverra dui, sit amet aliquet neque sagittis eu. Praesent quis volutpat eros, nec hendrerit turpis. Nullam vel blandit metus, ac placerat tellus. Mauris leo nulla, efficitur a neque non, vestibulum dictum diam. Nam vestibulum tortor eu eros viverra mattis. Sed eu urna id lacus maximus luctus quis et neque.</p>
-			<p>Duis maximus lacinia mattis. Fusce fermentum dignissim sem, ut sollicitudin libero consequat nec. Quisque a vestibulum augue. Sed sit amet purus in tellus congue viverra quis id magna. Maecenas iaculis purus placerat ligula aliquet aliquam. Proin molestie mattis faucibus. Cras a volutpat dui, ut pulvinar tellus.</p>
-			<p>Suspendisse malesuada, nulla eget iaculis fermentum, libero dolor vestibulum urna, ut auctor dolor diam ut dolor. Nullam mollis congue luctus. Fusce nulla dolor, faucibus nec volutpat eget, consequat quis nisl. Cras id diam efficitur, congue lectus ac, vulputate leo. Morbi odio velit, finibus id ornare sit amet, luctus ut eros. Fusce fringilla eu diam quis tempor. Proin pretium purus a fringilla semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin lorem diam, laoreet at lectus quis, lobortis tempor tortor. Vivamus semper, ex convallis iaculis suscipit, risus augue bibendum sapien, nec volutpat lacus quam finibus arcu. Nunc non consectetur eros, eu viverra metus. Aliquam nisl risus, condimentum et sapien id, rutrum interdum odio. Nulla facilisi. Ut ac egestas quam.</p>
-			-->
-		</main>
+		nav ul {
+			list-style: none;
+			width: 15em;
 
-		<!-- Dit is het menu
-		<nav>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="faq.html">Veelgestelde vragen</a></li>
-				<li><a href="switch.html">Switch control</a></li>
-				<li><a href="menu.html">Mobiel menu</a></li>
-				<li><a href="rating.html">Rating</a></li>
-				<li><a href="carrousel.html">Carrousel</a></li>
-				<li><a href="pickers.html">Favorieten picker</a></li>
-				<li><a href="tabs.html">Tabbladen</a></li>
-				<li><a href="file.html">File image upload met preview</a></li>
-			</ul>
-		</nav>
-		-->
+		}
 
-		<!-- Dit is eventueel het 'Sluiten' icoon
-		<svg viewBox="0 0 32 32" width="32" height="32">
+		:is(nav ul li a) {
+			cursor: pointer;
+			font-weight: 600;
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			padding: 1em;
+			text-decoration: none;
+
+			color: #050542;
+		}
+		a:hover {
+			color: #66E5BF;
+		}
+		nav ul li a:hover {
+			background-color: #050542FF;
+		}
+
+
+		nav a.svg_kruisje_close {
+			display: flex;
+			justify-content: flex-end;
+			cursor: pointer;
+		}
+
+		nav a.svg_kruisje_close:active {
+			border: 0.5em solid black;
+			cursor: pointer;
+		}
+
+
+		/* Hint: kijk eens naar :target */
+	</style>
+	<script type="module">
+		/* Schrijf hier eventueel je client-side JavaScript */
+
+		/* Hint: dit component kan volledig met CSS, maar met JS kun je 'm helemaal afmaken */
+	</script>
+</head>
+<body>
+<nav id="menu">
+	<a aria-label="kruisje" class="svg_kruisje_close" href="#">
+		<svg height="32" viewBox="0 0 32 32" width="32">
 			<title>Sluiten</title>
 			<path d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"></path>
 		</svg>
-		-->
-	</body>
+	</a>
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="faq.html">Veelgestelde vragen</a></li>
+		<li><a href="switch.html">Switch control</a></li>
+		<li><a href="menu.html">Mobiel menu</a></li>
+		<li><a href="rating.html">Rating</a></li>
+		<li><a href="carrousel.html">Carrousel</a></li>
+		<li><a href="pickers.html">Favorieten picker</a></li>
+		<li><a href="tabs.html">Tabbladen</a></li>
+		<li><a href="file.html">File image upload met preview</a></li>
+	</ul>
+
+
+</nav>
+
+<main>
+	<h1>Mobiel menu</h1>
+
+	<!-- Hint: Wat heb je nodig, als je op een klein scherm naar het menu wilt? -->
+	<button class="">
+
+		<a href="#menu" class="menu_link">Menu</a>
+
+	</button>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum eget elit eu tincidunt. Donec gravida
+		nulla at justo sollicitudin, hendrerit faucibus diam tincidunt. Pellentesque porta neque quis nunc laoreet
+		congue. Sed porttitor nec tellus nec semper. Cras pharetra dictum risus ut sagittis. Aliquam in iaculis arcu.
+		Nulla sit amet diam sit amet mauris placerat laoreet eu vel turpis. Vivamus ac massa ut diam gravida elementum
+		ut nec nulla. Integer vel felis massa. Quisque facilisis enim ornare ultricies mattis. Fusce porta rhoncus ex.
+		Nunc viverra orci at leo fermentum convallis. Morbi sodales, lectus congue aliquam maximus, metus ipsum placerat
+		turpis, vitae venenatis metus erat vel eros. Vestibulum lobortis accumsan elit nec maximus. Vivamus mollis
+		ullamcorper felis, id aliquet tellus volutpat at.</p>
+	<p>In ante sem, faucibus sit amet nisl ut, efficitur mattis augue. Aenean fringilla lorem id metus ultrices
+		bibendum. Quisque eleifend enim purus, eu bibendum mauris blandit nec. Donec vitae purus sed eros ullamcorper
+		vehicula sit amet eu massa. Vestibulum eget mi vel tellus pharetra convallis quis quis nunc. Maecenas bibendum
+		neque sit amet neque ultrices sollicitudin. Donec viverra arcu nec urna accumsan pharetra. Donec pharetra
+		lacinia elementum.</p>
+	<p>Aliquam auctor diam ut ipsum mattis semper. Praesent auctor quam ut libero aliquet, at gravida nunc aliquam. Duis
+		mollis faucibus nisi at fringilla. Vestibulum at vulputate tortor, eget consequat libero. Praesent non ante
+		libero. Praesent imperdiet neque at lacus mattis, at tincidunt odio ullamcorper. In massa metus, iaculis id
+		vulputate vel, aliquam eu sem. Nulla varius lorem ut justo consectetur consectetur. Nulla viverra, metus in
+		dapibus facilisis, magna sapien lobortis urna, vel mattis sapien velit at nisi. Nullam semper est lorem, id
+		lobortis est blandit gravida. Nulla purus orci, aliquet ac purus at, eleifend ultricies dolor. Vivamus lobortis
+		lectus quis augue molestie congue. Morbi vel libero ac ex sagittis euismod vitae eu dolor. Nunc sed libero enim.
+		Duis at lacus et est fermentum ullamcorper et non eros. Ut semper auctor commodo.</p>
+	<p>Phasellus facilisis, lorem a venenatis ultrices, turpis turpis maximus est, quis lacinia risus erat quis mi. In
+		ornare consequat malesuada. In hac habitasse platea dictumst. Maecenas egestas diam quis fringilla laoreet. Ut
+		at tortor blandit, ultricies nisi et, pretium nisi. Praesent ac est vitae leo gravida sodales quis quis libero.
+		Nullam nec ligula ultricies, euismod ipsum sed, iaculis urna. Sed vel eros non ex dapibus consequat sed sed
+		diam. Fusce sem libero, fermentum vel sapien ac, dictum fringilla enim.</p>
+	<p>Duis sem ligula, cursus a arcu id, rutrum iaculis mauris. Mauris sagittis eros in elit egestas, et egestas risus
+		lacinia. Nullam vel sapien finibus, vehicula nisi ut, hendrerit turpis. Suspendisse volutpat tortor dolor, non
+		varius purus efficitur eget. Nam mollis sem ac ligula sodales, non commodo justo vulputate. Donec elementum
+		viverra orci at laoreet. Proin lobortis quis neque pretium venenatis. Quisque non rhoncus diam, vitae
+		sollicitudin quam. Sed felis nisl, ultricies sed turpis ac, faucibus imperdiet mi.</p>
+	<p>Nulla sit amet mattis enim. Aenean mollis dapibus gravida. Nam odio metus, luctus et laoreet ac, bibendum eget
+		eros. Ut rutrum dui ut elementum consectetur. Nam imperdiet mollis mattis. Pellentesque et eros magna.
+		Suspendisse bibendum varius mattis. Aliquam placerat quam purus, iaculis ornare augue consequat ac. Vestibulum
+		iaculis ligula in iaculis luctus.</p>
+	<p>Vestibulum varius, nisl ac semper tincidunt, metus leo volutpat nibh, in bibendum purus lorem at mi. Quisque id
+		tincidunt massa, sed mattis tellus. In dignissim fermentum ultricies. Phasellus ornare justo eget arcu rutrum,
+		in elementum lacus dictum. Donec porta, odio id feugiat varius, turpis leo tristique nibh, sed malesuada quam
+		ipsum vitae nibh. Ut tempor rhoncus auctor. Cras sit amet lectus pretium, dignissim est eu, aliquam orci.</p>
+	<p>Morbi sodales est sit amet arcu posuere molestie. Curabitur molestie felis eget orci hendrerit, id rhoncus metus
+		venenatis. Aenean blandit, leo a bibendum porttitor, quam massa aliquam sem, id fermentum nisl libero eu arcu.
+		Curabitur ultrices sagittis mauris, nec imperdiet augue eleifend vel. Proin non dolor ipsum. Nam bibendum erat
+		eu volutpat luctus. Aenean dictum rhoncus erat vel gravida. Pellentesque blandit gravida eros laoreet aliquam.
+		Curabitur tristique ipsum tellus, vitae consectetur ipsum euismod at. Vestibulum tincidunt mauris tellus, quis
+		iaculis nisi elementum vel. Quisque vel libero placerat, pellentesque dolor id, iaculis enim. Aliquam odio sem,
+		lacinia eu dolor vehicula, vulputate accumsan ante. Duis posuere ex sed elit vestibulum faucibus.</p>
+	<p>Sed vitae felis a lorem dictum dictum. Maecenas placerat dolor sed lobortis euismod. Aliquam rutrum tincidunt ex
+		eu consectetur. Quisque et neque quam. Praesent augue nulla, venenatis ac accumsan at, sagittis et lectus. Donec
+		maximus velit sit amet euismod auctor. Ut mattis ipsum nec massa tristique, vitae finibus arcu egestas.
+		Pellentesque ut leo pulvinar, imperdiet ipsum ac, aliquam ligula. Sed ultricies nunc non arcu tempus
+		laoreet.</p>
+	<p>Ut placerat leo quis mi placerat scelerisque. Phasellus vehicula sollicitudin orci sed sollicitudin. In hac
+		habitasse platea dictumst. Duis auctor enim id dolor cursus, egestas venenatis quam accumsan. Integer faucibus
+		lorem id commodo vulputate. Nulla non nulla ut nisl tincidunt finibus et in libero. In aliquet ornare diam ut
+		pharetra.</p>
+	<p>Ut auctor iaculis libero sagittis commodo. Integer non justo eget lacus molestie dictum. Curabitur luctus
+		elementum felis, quis posuere velit tempor ut. Donec lacinia leo non arcu eleifend, non posuere sapien rutrum.
+		Vivamus accumsan ex ante, quis dictum nunc lobortis at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Fusce nec quam sit amet sem porttitor tincidunt. Nam ut fermentum ex. Quisque aliquet molestie enim, ut egestas
+		arcu fringilla et. Donec dui nulla, fringilla eu urna ut, aliquet eleifend leo. Integer quis mi laoreet,
+		sollicitudin nibh quis, hendrerit augue.</p>
+	<p>Aenean neque sem, scelerisque interdum sem ut, pulvinar aliquam est. Aenean gravida augue dui, nec egestas erat
+		euismod ut. Curabitur et tortor mi. Ut sed dictum nibh, at ultrices purus. Maecenas in dolor vitae erat
+		tincidunt tempor sed vel arcu. Aenean ullamcorper vitae libero mattis sollicitudin. In ultrices condimentum ante
+		ac congue. Nullam pellentesque dolor in ante placerat, sed dignissim ligula congue. Pellentesque habitant morbi
+		tristique senectus et netus et malesuada fames ac turpis egestas. Fusce in semper lacus, eget venenatis
+		tellus.</p>
+	<p>Fusce congue elit eget sapien hendrerit, sollicitudin fermentum nisi tempor. Cras semper mi id lacus pharetra
+		tincidunt. Aliquam scelerisque facilisis tempus. Quisque sed dui nec lectus pulvinar porta. Cras eget
+		consectetur diam. Pellentesque vel congue neque. Nam arcu mauris, pretium vitae enim et, ornare finibus purus.
+		Nam maximus libero feugiat, faucibus massa vitae, ultricies est. Aenean mattis viverra dui, sit amet aliquet
+		neque sagittis eu. Praesent quis volutpat eros, nec hendrerit turpis. Nullam vel blandit metus, ac placerat
+		tellus. Mauris leo nulla, efficitur a neque non, vestibulum dictum diam. Nam vestibulum tortor eu eros viverra
+		mattis. Sed eu urna id lacus maximus luctus quis et neque.</p>
+	<p>Duis maximus lacinia mattis. Fusce fermentum dignissim sem, ut sollicitudin libero consequat nec. Quisque a
+		vestibulum augue. Sed sit amet purus in tellus congue viverra quis id magna. Maecenas iaculis purus placerat
+		ligula aliquet aliquam. Proin molestie mattis faucibus. Cras a volutpat dui, ut pulvinar tellus.</p>
+	<p>Suspendisse malesuada, nulla eget iaculis fermentum, libero dolor vestibulum urna, ut auctor dolor diam ut dolor.
+		Nullam mollis congue luctus. Fusce nulla dolor, faucibus nec volutpat eget, consequat quis nisl. Cras id diam
+		efficitur, congue lectus ac, vulputate leo. Morbi odio velit, finibus id ornare sit amet, luctus ut eros. Fusce
+		fringilla eu diam quis tempor. Proin pretium purus a fringilla semper. Pellentesque habitant morbi tristique
+		senectus et netus et malesuada fames ac turpis egestas. Proin lorem diam, laoreet at lectus quis, lobortis
+		tempor tortor. Vivamus semper, ex convallis iaculis suscipit, risus augue bibendum sapien, nec volutpat lacus
+		quam finibus arcu. Nunc non consectetur eros, eu viverra metus. Aliquam nisl risus, condimentum et sapien id,
+		rutrum interdum odio. Nulla facilisi. Ut ac egestas quam.</p>
+</main>
+
+<details open>
+	<summary>Demo video</summary>
+	<video autoplay controls height="863" loop muted src="assets/menu.mp4" width="773">
+		<a href="assets/menu.mp4">assets/menu.mp4</a>
+	</video>
+</details>
+</body>
 </html>

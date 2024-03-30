@@ -12,13 +12,57 @@
 		section{
 			background-color: #66E5BF;
 			width: 44em;
-			height: 14em;
+			height: 25em;
+			margin-bottom: 5em;
+		}
+		.change-background {
+			object-fit: contain;
+
+			background-size: cover;
+		}
+		#myFile{
+			display: none;
+		}
+		label{
+			font-size: 1.5em;
+			text-decoration: black;
+		}
+		.form{
+			display: grid;
+			grid-template-rows: auto auto;
+			gap: 23em;
+		}
+		.uploaden{
+			width: 10em;
 		}
 
 	</style>
 	<script type="module">
 		/* Schrijf hier eventueel je client-side JavaScript */
+		/* Hint: Via JS kun je Custom Properties in CSS aanpassen */
+		//
 
+		// dit kan je niet maken zonder javascritpt
+
+		const input = document.querySelector("#myFile")
+		const image_add = document.querySelector(".change-background")
+
+		const button = document.querySelector("button.fdnd-button");
+
+		button.addEventListener("click",
+				function () {
+					input.click();
+				})
+
+		input.addEventListener("change", function (event) {
+			const file = event.target.files[0];
+
+			const imageUrl = URL.createObjectURL(file);
+			image_add.style.backgroundImage = `url(${imageUrl})`;
+		});
+
+		// }
+		// https://stackoverflow.com/questions/72236829/getting-image-from-input-file-and-then-add-it-as-a-background-to-a-div
 		/* Hint: Met een paar regels kom je al een heel eind */
 
 		/* Hint: Via JS kun je Custom Properties in CSS aanpassen */
@@ -29,17 +73,15 @@
 
 <!-- Voor het uploaden van een bestand heb je altijd een formulier nodig.
      Dus die krijg je alvast. Maak je over de server niet druk; het gaat om de UI. -->
-<section>
+<section class="change-background">
 
 
 	<!--			<h2>kies je afbeelding</h2>-->
-	<form method="post">
-
-		<!-- Hint: Denk niet te ingewikkeld -->
-		<!--https://www.w3schools.com/howto/howto_html_file_upload_button.asp-->
-		<input type="file" id="myFile" name="filename">
-		<button type="submit" class="fdnd-button">Uploaden</button>
-
+	<form method="post" class="form">
+		<label for="myFile">sselecteer je afbeelding
+			<input type="file" id="myFile" name="filename" >
+		</label>
+		<button type="submit" class="fdnd-button uploaden">Uploaden</button>
 	</form>
 </section>
 <details open>
