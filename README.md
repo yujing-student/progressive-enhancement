@@ -2,7 +2,7 @@
 
 # Progressive Enhancement
 
-Een oefening in het ontwerpen en bouwen van websites volgens het principe van Progressive Enhancement
+Een oefening in het ontwerpen en bouwen van websites volgens het principe van Progressive Enhancement zie mijn wiki voor mijn bevindingen
 
 ## Licentie
 
